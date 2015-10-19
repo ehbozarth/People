@@ -39,7 +39,7 @@ public class People {
                 }//End of if Statement
                 else {
                     pCountry.add(person1);
-                }
+                }//End of else statement
 
                 Collections.sort(pCountry);
                 //Sorting the collection of pCountry List by Last name
@@ -77,7 +77,6 @@ public class People {
         catch(Exception e){
             System.out.println("Error...Error...Error");
         }//End of Catch
-    }//End of wrtieFile
-
+    }//End of writeFile
 
 }//End of People Class
