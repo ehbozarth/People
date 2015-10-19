@@ -15,33 +15,37 @@ public class People {
         HashMap<String, ArrayList<Person>> peopleMap = new HashMap<>();
         String [] lines = peopleContent.split("\n");
 
+        int index = 0;
 
         for(String line : lines){
-            String [] columns = line.split(",");
-            String id = columns[0];
-            String firstName = columns[1];
-            String lastName = columns[2];
-            String email = columns[3];
-            String country = columns[4];
-            String ipAddress = columns[5];
+            if (index != 0) {
+                String[] columns = line.split(",");
+                String id = columns[0];
+                String firstName = columns[1];
+                String lastName = columns[2];
+                String email = columns[3];
+                String country = columns[4];
+                String ipAddress = columns[5];
 
-            Person person1 = new Person(id, firstName, lastName, email, country,ipAddress);
+                Person person1 = new Person(id, firstName, lastName, email, country, ipAddress);
 
-            String countryName = String.valueOf(columns[4]);
-            ArrayList<Person> pCountry = peopleMap.get(countryName);
+                String countryName = String.valueOf(columns[4]);
+                ArrayList<Person> pCountry = peopleMap.get(countryName);
 
-            if(pCountry == null){
-                pCountry = new ArrayList<>();
-                pCountry.add(person1);
-                peopleMap.put(countryName, pCountry);
-            }//End of if Statement
-            else{
-                pCountry.add(person1);
-            }
+                if (pCountry == null) {
+                    pCountry = new ArrayList<>();
+                    pCountry.add(person1);
+                    peopleMap.put(countryName, pCountry);
+                }//End of if Statement
+                else {
+                    pCountry.add(person1);
+                }
 
-            Collections.sort(pCountry);
-            //Sorting the collection of pCountry List by Last name
-
+                Collections.sort(pCountry);
+                //Sorting the collection of pCountry List by Last name
+            }//End of If index does not equal 0
+            index++;
+            //Index is used to help skip over the first line of field names
         }//End of For Loop
 
         System.out.println(peopleMap.toString());
