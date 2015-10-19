@@ -23,11 +23,11 @@ public class Person implements Comparable{
         Person p = (Person) o;
         int result = lastName.compareTo(p.lastName);
         return result;
-    }
+    }//End of Compare To
 
     @Override
     public String toString(){
         return String.format("%s %s is from %s %s\n", firstName, lastName, country, ipAddress);
-    }
+    }//End of toString
 
 }//End of Person Class
