@@ -27,7 +27,7 @@ public class Person implements Comparable{
 
     @Override
     public String toString(){
-        return String.format("%s %s is from %s %s\n", firstName, lastName, country, ipAddress);
+        return String.format("%s %s is from %s\n", firstName, lastName, country);
     }//End of toString
 
 }//End of Person Class

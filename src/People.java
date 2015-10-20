@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by earlbozarth on 10/19/15.
@@ -41,14 +42,20 @@ public class People {
                     pCountry.add(person1);
                 }//End of else statement
 
-                Collections.sort(pCountry);
-                //Sorting the collection of pCountry List by Last name
+                //Collections.sort(pCountry);
+                //Sorting the collection of pCountry List by Last na
+
             }//End of If index does not equal 0
             index++;
             //Index is used to help skip over the first line of field names
-        }//End of For Loop
 
-        System.out.println(peopleMap.toString());
+            for(ArrayList<Person> list : peopleMap.values()){
+                Collections.sort(list);
+            }//End of inner for Loop
+
+        }//End of outer For Loop
+
+        System.out.println(peopleMap);
 
     }//End of Main Method
 
